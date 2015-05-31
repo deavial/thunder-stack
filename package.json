@@ -1,0 +1,17 @@
+{
+  "name": "Hanked",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.12.4",
+    "express-handlebars": "^2.0.1",
+    "express-stormpath": "^1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dave Kingsnorth",
+  "license": "ISC"
+}
