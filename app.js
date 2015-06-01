@@ -24,23 +24,6 @@ app.use(stormpath.init(app, {
 
 app.get('/', require('./routes').index);
 
-// app.get('/', stormpath.loginRequired, function(req, res) {
-
-//     //console.log(res.locals.user);
-
-//     // set & save custom user data (arbitrary example)
-//     req.user.customData.foo = 'ba!';
-//     req.user.save();
-
-//     // get custom user data and return it to rendered view
-//     req.user.getCustomData(function(err, data) {
-//         res.render('home', {
-//             foo: data.foo
-//         });
-//     });
-
-// });
-
 
 app.listen(3000);
 module.exports = app; 
