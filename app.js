@@ -1,5 +1,6 @@
 var express = require('express');
 var stormpath = require('express-stormpath');
+var routes = require('./routes/index');
 var app = express();
 
 
@@ -22,7 +23,7 @@ app.use(stormpath.init(app, {
 }));
 
 
-app.get('/', require('./routes').index);
+app.use('/', routes);
 
 
 app.listen(3000);
