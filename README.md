@@ -13,7 +13,8 @@ Express application, Stormpath user management, React component views*
 http://localhost:3000/
 
 ## Views
+http://localhost:3000/
 http://localhost:3000/login
 http://localhost:3000/register
-http://localhost:3000/Dashboard
+
 
