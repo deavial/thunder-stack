@@ -1,11 +1,10 @@
 var express = require('express');
 var stormpath = require('express-stormpath');
-var exphbs  = require('express-handlebars');
 var app = express();
 
 
-app.engine('handlebars', exphbs({defaultLayout: 'default'}));
-app.set('view engine', 'handlebars');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-view-engine').createEngine());
 
 
 app.use(stormpath.init(app, {
@@ -18,27 +17,12 @@ app.use(stormpath.init(app, {
     sessionDuration: 1000 * 60 * 60 * 24, 
 
     postRegistrationHandler: function(account, req, res, next) {
-        res.redirect(302, '/dashboard').end();
+        res.redirect(302, '/').end();
     }
 }));
 
 
-app.get('/dashboard', stormpath.loginRequired, function(req, res) {
-
-    //console.log(res.locals.user);
-
-    // set & save custom user data (arbitrary example)
-    req.user.customData.foo = 'ba!';
-    req.user.save();
-
-    // get custom user data and return it to rendered view
-    req.user.getCustomData(function(err, data) {
-        res.render('home', {
-            foo: data.foo
-        });
-    });
-
-});
+app.get('/', require('./routes').index);
 
 
 app.listen(3000);
