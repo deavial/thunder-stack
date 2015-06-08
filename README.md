@@ -1,8 +1,6 @@
 # thunder-stack
 Express application, Stormpath user management, React component views*
 
-*currently using handlebars template engine, next job is to render react jsx views
-
 ## Install dependencies
 ```$ npm install```
 
@@ -18,5 +16,3 @@ Express application, Stormpath user management, React component views*
 * [http://localhost:3000/login](http://localhost:3000/login)
 * [http://localhost:3000/register](http://localhost:3000/register)
 * [http://localhost:3000/logout](http://localhost:3000/logout)
-
-
